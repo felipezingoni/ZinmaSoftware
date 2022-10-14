@@ -1,0 +1,70 @@
+.login-photo {
+  height: 90vh;
+  object-fit: cover;
+  background-image: url("https://res.cloudinary.com/ddlmgs04n/image/upload/v1660399333/Zinma2.0/A7405401_1_a4yx3z.png");
+  // border-top-right-radius: 8%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fondo {
+  background-color: #DCDCD6;
+}
+
+// .boder-top-radius {
+//   border-top-left-radius: 7%;
+//   border-top-right-radius: 8%;
+// }
+
+.logo {
+  height: 226px;
+  // background-color: #fbfbfb4d;
+  // box-shadow: 2px 2px 3px #80808038;
+  // border-radius: 15px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 37px 37px 72px #d1d1d1, -37px -37px 72px #ffffff;
+}
+
+.titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  color: #555a38;
+}
+.subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #747958fa;
+  font-size: 20px;
+}
+
+.form-control {
+  width: 64%;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.boton {
+  background-color: #7f816d69;
+  color: #6f7063;
+}
+
+.boton:hover {
+  background-color: #7f816da2 !important;
+  color: #6f7063;
+}
+
+.field {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color:gray;
+  width: 400px;
+}

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-3 pr-0">
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class="col-9 pl-0">
+    <div class="dashboard" style="height:90vh; width: auto; border-top-right-radius: 32px;">
+      <div class="d-flex justify-content-between align-items-center">
+        <% time = Time.now %>
+        <h1 class="title">Home</h1>
+        <p class="p-4 time"><%= time.to_formatted_s(:long) %></p>
+      </div>
+        <div>
+          <% if time.to_formatted_s(:time) >= "05:00" &&  time.to_formatted_s(:time) <= "12:00"   %>
+             <p>Buenos Dias @user</p>
+            <% elsif  time.to_formatted_s(:time) > "12:00" &&  time.to_formatted_s(:time) <= "19:00"  %>
+              <p>Buenas tardes @user</p>
+            <% else %>
+              <p>Buenas Noches @user</p>
+          <% end %>
+        </div>
+      <%= render 'shared/carrousel' %>
+
+    <%= render "shared/flashes" %>
+    </div>
+  </div>
+</div>

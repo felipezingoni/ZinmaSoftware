@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-3 pr-0">
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class="col-9 pl-0">
+    <div class="dashboard" style="height:90vh; width: auto; border-top-right-radius: 32px;">
+      <h1 class="titulo p-3 mx-4">Politicas de Gestion</h1>
+      <p><%= @documents.count %> documents</p>
+      <div class="row">
+        <div class="col-6">
+          <div class="scroll">
+            <% @documents.order(created_at: :desc).each do |document| %>
+              <div class="card">
+                <h4 class="name-pdf"><%= document.name_document %></h4>
+                <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
+                  <% if document.images.image? %>
+                    <%= image_tag document.images.image, width:"200px"%>
+                  <%# <% else %>
+                    <%# <%= link_to document.name_document, rails_blob_path(file, disposition: "attachment")  %>
+                  <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-6">
+          <%= render 'shared/pdf' %>
+        </div>
+      </div>
+      <%= render "shared/flashes" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<% if  user_signed_in? %>
+    <nav class="navbar navbar-expand-lg navbar-color container w-100" style="height: 76px;">
+      <div class="row w-100" style="padding: 0px;">
+        <div class="d-flex justify-content-between w-100">
+          <div>
+            <%= image_tag("https://res.cloudinary.com/ddlmgs04n/image/upload/v1656730861/Zinma2.0/Zinma_blanco_1_tv0iru.svg", class:"m-2 ", style:"width: 70px;") %>
+          </div>
+          <div class="d-flex align-self-center align-items-center justify-content-end">
+            <ul class="d-flex align-self-center align-content-center align-items-center m-0" >
+              <%# <li class="m-4 list-inline-item">
+                <%= link_to "#", "#" %>
+              <%# </li> %>
+              <li class="m-4 list-inline-item  align-items-center rounded-circle d-flex   justify-content-center" style="width:40px; height:40px;background-color: #505144d6"><i class="fas fa-bell" style="color: aliceblue;"></i></li>
+            </ul>
+            <h1 class="rounded-1 m-3 mt-2" style="border-left: 1.9px solid #505144d6;height: 47px;"></h1>
+            <div class="dropdown">
+                <%if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar, height:50, width: 50, class:"rounded-circle"  %>
+                  <% else %>
+                    <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1665590513/Zinma2.0/profile_vehpkz.png", height:50, width: 50, class:"rounded-circle" %>
+                  <% end %>
+              <button class="dropdown-toggle mr-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;border: 0px;">
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
+                <li><%= link_to "Action", "#", class: "dropdown-item" %></li>
+                <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
+                <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  <% else %>
+    <div class="navbar-color">
+      <nav class="container d-flex align-items-center justify-content-between">
+        <div class="">
+          <%= image_tag("https://res.cloudinary.com/ddlmgs04n/image/upload/v1656730861/Zinma2.0/Zinma_blanco_1_tv0iru.svg", class:"m-2 ", style:"width:70px;") %>
+        </div>
+      </nav>
+    </div>
+<% end %>

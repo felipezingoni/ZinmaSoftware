@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-3 pr-0">
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class="col-9 pl-0">
+    <div class="dashboard-edit" style="height:90vh; width: auto; border-top-right-radius: 32px;">
+    <div class="d-flex align-items-center flex-column edit">
+        <div class="text-center">
+          <h2 class="title">Edit Profile</h2>
+        </div>
+        <div>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="field">
+            <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center upload">
+                  <%if resource.avatar.attached? %>
+                    <%# <%= image_tag resource.avatar.variant(resize:"100x100!"), class:"rounded-circle" %>
+                    <%= image_tag @user.avatar, height:100, width: 100, class:"rounded-circle"  %>
+                  <% else %>
+                    <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1665590513/Zinma2.0/profile_vehpkz.png", height:100, width: 100, class:"rounded-circle" %>
+                  <% end %>
+                  <div class="round">
+                    <i class="fa fa-camera"></i>
+                    <%= f.input :avatar %>
+                  </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="field">
+              <%= f.input :name, autofocus: true, autocomplete: "name" %>
+            </div>
+
+            <div class="field">
+              <%= f.input :last_name, autofocus: true, autocomplete: "last_name" %>
+            </div>
+
+            <div class="field">
+              <%= f.input :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="actions d-flex justify-content-center">
+                <%= button_tag(type: 'submit', class: "boton mt-4 subtitulo", style: "border: 0;border-radius: 6px;padding: 7px;width: 84%;") do %>
+                   Update Profile
+                <% end %>
+            </div>
+            <div>
+              <%= link_to 'Change password', "shared/password" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+
+      <%= link_to "Back", :back %>
+
+
+    </div>
+  </div>
+</div>

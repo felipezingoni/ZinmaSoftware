@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="col-3 pr-0">
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class="col-9 pl-0">
+    <div class="dashboard" style="height:90vh; width: auto; border-top-right-radius: 32px;">
+      <h1 class="titulo p-5">Crea un nuevo Archivo</h1>
+        <div class="d-flex justify-content-center">
+          <%# <%= simple_form_for document_path do |f|%>
+          <%= simple_form_for @document do |f| %>
+            <div class="field">
+              <%= f.input :name_document %>
+            </div>
+            <div class="field">
+              <%= f.input :created_by %>
+            </div>
+            <div class="field">
+              <%= f.input :date %>
+            </div>
+            <div class="field">
+              <%= f.file_field :image %>
+            </div>
+            <div class="field">
+              <%= f.submit  %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

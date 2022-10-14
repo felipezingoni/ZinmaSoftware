@@ -1,0 +1,25 @@
+<%= form_with( url: document_path) do |form| %>
+  <div class="field">
+    <%= form.label :name_document %>
+    <%= form.text_field :name_document, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_by %>
+    <%= form.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true, direct_upload: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.text_area :created_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

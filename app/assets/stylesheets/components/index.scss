@@ -1,0 +1,102 @@
+@import "components/navbar";
+@import "components/login";
+@import "components/sidebar";
+@import "components/dashboard";
+@import "components/card";
+
+
+body {
+  background-color:rgba(126, 129, 109, 79%) ;
+}
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@700&display=swap');
+
+@font-face {
+  font-family: "Helvetica";
+  src: url('fonts/Helvetica/HelveticaNowDisplayXBlk.otf');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Helvetica bold";
+  src: url('fonts/Helvetica/FreeSansBold.otf');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Oakes Grotesk";
+  src: url('fonts/oakes/Oakes-Grotesk-Bold.otf');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Oakes Grotesk";
+  src: url('fonts/oakes/Oakes-Grotesk-Semi-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Oakes Grotesk";
+  src: url('fonts/oakes/Oakes-Grotesk-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Oakes Grotesk";
+  src: url('app/assets/stylesheets/fonts/oakes/Oakes-Grotesk-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Oakes Grotesk";
+  src: url('fonts/oakes/Oakes-Grotesk-Light.otf');
+  font-weight: lighter;
+}
+
+
+@font-face {
+  font-family: "Trump Gothic";
+  font-weight: bold;
+  src: url('fonts/trump/trump_gothic_east_bold.ttf')format('truetype');
+}
+
+.alert {
+  -webkit-animation: cssAnimation 3s forwards;
+  animation: cssAnimation 3s forwards;
+}
+
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+}
