@@ -16,11 +16,15 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new(document_params)
-    if @document.save
-      redirect_to root_path, notice: "Document was successfully created."
+    if current_user.admin === true
+      @document = Document.new(document_params)
+      if @document.save
+        redirect_to root_path, notice: "Document was successfully created."
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_documents_path, notice: "Sorry you can't create a file"
     end
   end
 

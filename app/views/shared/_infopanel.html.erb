@@ -1,0 +1,12 @@
+<% @documents.order(created_at: :desc).each do |document| %>
+  <div class="card" >
+    <h4 class="name-pdf"><%= document.name_document %></h4>
+    <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
+    <%# <%= @document.images.attach(io: File.open('/path/to/file')), width:"200px"  %>
+      <%# <% if document.images.image? %>
+        <%# <%= image_tag document.images.image, width:"200px"%>
+      <%# <% else %>
+        <%# <%= link_to document.name_document, rails_blob_path(file, disposition: "attachment")  %>
+      <%# <% end %>
+  </div>
+<% end %>

@@ -20,10 +20,10 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+gem 'webpacker'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
-
+gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -35,6 +35,8 @@ gem 'simple_form'
 gem "font-awesome-sass", "~> 6.2.0"
 gem 'poppler'
 gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
+gem 'psych', '< 4'
+
 # gem 'gravatar_image_tag'
 # gem 'gravtastic'
 

@@ -1,26 +1,31 @@
-<div class="row">
-  <div class="col-3 pr-0">
-    <%= render 'shared/sidebar' %>
-  </div>
-  <div class="col-9 pl-0">
-    <div class="dashboard" style="height:90vh; width: auto; border-top-right-radius: 32px;">
-      <div class="d-flex justify-content-between align-items-center">
-        <% time = Time.now %>
-        <h1 class="title">Home</h1>
-        <p class="p-4 time"><%= time.to_formatted_s(:long) %></p>
-      </div>
-        <div>
-          <% if time.to_formatted_s(:time) >= "05:00" &&  time.to_formatted_s(:time) <= "12:00"   %>
-             <p>Buenos Dias @user</p>
-            <% elsif  time.to_formatted_s(:time) > "12:00" &&  time.to_formatted_s(:time) <= "19:00"  %>
-              <p>Buenas tardes @user</p>
-            <% else %>
-              <p>Buenas Noches @user</p>
-          <% end %>
-        </div>
-      <%= render 'shared/carrousel' %>
 
-    <%= render "shared/flashes" %>
-    </div>
-  </div>
+<div class="container" data-controller="hello" data-hello-index="0">
+  <% @documents.each do |document| %>
+    <a href="#" class="card list-group-item list-group-item-action active" data-action="click->hello#show" data-target="hello.item" >
+      <h4 class="name-pdf"><%= document.name_document %></h4>
+      <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
+    </a>
+  <% end %>
+
 </div>
+
+  <%# <h2>Prueba 2 pa!!</h2>
+
+  <div class="row">
+    <div class="col-6">
+       <div class="col-4 list-group">
+        <div href="#" class="card list-group-item list-group-item-action active" data-action="click->hello#show" data-target="hello.item">Parte 1</div>
+        <div href="#" class="card list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item">Parte 2</div>
+        <div href="#" class="card list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item">Parte 3</div>
+      </div>
+    </div> %>
+
+     <div class="col-4">
+      <div class="tab-content">
+        <div class="tab-pane fade show active" role="tabpanel"  data-target="hello.content">El dinero es práctico y conveniente. Es fácil de transportar y nos permitió dejar atrás el trueque. Antes de la existencia del dinero, se utilizaba el intercambio, por ejemplo de gallinas por arroz. Podrás imaginar lo difícil que era día a día intercambiar lo necesario, convenir precios, regatear, etc.
+Hasta llegar al dinero que conocemos hoy en día, existieron numerosas innovaciones para mejorar la economía de las personas. El primer intento para abandonar el trueque fue el dinero mercancía. En esta época, la gente le asignaba valor a las cosas usando como medida otro producto, por ejemplo: 1 oveja por 4 sacos de sal o 1 pescado por 2 sacos de sal. Más adelante, este sistema fue reemplazado por las monedas acuñadas en metales preciosos como el oro, la plata o el cobre. Finalmente, se inventó el billete.</div>
+        <div class="tab-pane fade" role="tabpanel" data-target="hello.content">El 31 de octubre de 2008, a través de una lista de correo sobre criptografía llamada Metzdow.com, Satoshi habla por primera vez de Bitcoin y publica el whitepaper con el título 'Bitcoin P2P e-cash paper'. En él se menciona el uso de una red entre pares para solucionar el problema del doble gasto y la posibilidad de que los participantes de dicha red puedan permanecer en el anonimato de forma segura, mediante el uso de un algoritmo de consenso proof-of-work (PoW).
+El 9 de enero de 2009 la versión 0.1 del software es subida a internet y un dia después, Hal Finney, primer usuario de Bitcoin tras Satoshi, publica en su cuenta de Twitter el famoso mensaje “Running Bitcoin”.</div>
+        <div class="tab-pane fade" role="tabpanel" data-target="hello.content">Las stablecoins surgieron de la necesidad de controlar la extrema volatilidad de las criptomonedas. A pesar de ser toda una revolución económica, los activos digitales son muy inestables en su valoración si se comparan con activos tradicionales. Esta volatilidad está ligada en muchos sentidos con la especulación en los mercados. Algunas de las ventajas más destacadas de las monedas estables son las siguientes: 1. No te limitan a la hora de hacer una transferencia. Pueden ser enviadas a cualquier parte del mundo sin mayores problemas y con bajas comisiones. 2. Permiten a los exchanges mantener un alto grado de liquidez y protección contra la alta volatilidad. </div>
+      </div>
+    </div>
