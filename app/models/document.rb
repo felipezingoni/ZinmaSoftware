@@ -1,5 +1,4 @@
 class Document < ApplicationRecord
 
-  has_one_attached :images
-
+  has_many_attached :uploads
 end

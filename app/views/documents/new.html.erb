@@ -24,7 +24,7 @@
                 <%= f.input :date %>
               </div>
               <div class="field m-2">
-                <%= f.file_field :image %>
+                <%= f.file_field :uploads, multiple: true %>
               </div>
               <div class="actions m-2 text-center">
                 <%= button_tag(type: 'submit', class: "boton mt-4 subtitulo", style: "border: 0;border-radius: 6px;padding: 7px;width: 84%;") do %>

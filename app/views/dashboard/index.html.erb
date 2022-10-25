@@ -1,13 +1,29 @@
 
 <div class="container" data-controller="hello" data-hello-index="0">
-  <% @documents.each do |document| %>
-    <a href="#" class="card list-group-item list-group-item-action active" data-action="click->hello#show" data-target="hello.item" >
+  <% @documents.map do |document| %>
+
+    <a href="#" class="card list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item" >
       <h4 class="name-pdf"><%= document.name_document %></h4>
-      <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
-    </a>
+      <p class="authot-pdf"><%= document.created_by %> </p>
+    </a> %>
+
   <% end %>
 
-</div>
+  <%# <a href="#" class="card list-group-item list-group-item-action active" data-action="click->hello#show" data-target="hello.item" >
+      <h4 class="name-pdf">uno</h4>
+      <p class="authot-pdf">parrafop</p>
+    </a>
+    <a href="#" class="card list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item" >
+      <h4 class="name-pdf">dos</h4>
+      <p class="authot-pdf">parrafop</p>
+    </a>
+    <a href="#" class="card list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item" >
+      <h4 class="name-pdf">tres</h4>
+      <p class="authot-pdf">parrafop</p>
+    </a> %>
+
+
+
 
   <%# <h2>Prueba 2 pa!!</h2>
 
@@ -29,3 +45,4 @@ El 9 de enero de 2009 la versión 0.1 del software es subida a internet y un dia
         <div class="tab-pane fade" role="tabpanel" data-target="hello.content">Las stablecoins surgieron de la necesidad de controlar la extrema volatilidad de las criptomonedas. A pesar de ser toda una revolución económica, los activos digitales son muy inestables en su valoración si se comparan con activos tradicionales. Esta volatilidad está ligada en muchos sentidos con la especulación en los mercados. Algunas de las ventajas más destacadas de las monedas estables son las siguientes: 1. No te limitan a la hora de hacer una transferencia. Pueden ser enviadas a cualquier parte del mundo sin mayores problemas y con bajas comisiones. 2. Permiten a los exchanges mantener un alto grado de liquidez y protección contra la alta volatilidad. </div>
       </div>
     </div>
+</div>

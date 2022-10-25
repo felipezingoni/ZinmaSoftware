@@ -16,8 +16,8 @@
             </ul>
             <h1 class="rounded-1 m-3 mt-2" style="border-left: 1.9px solid #505144d6;height: 47px;"></h1>
             <div class="dropdown">
-                <%if current_user.avatar.attached? %>
-                    <%= image_tag current_user.avatar, height:50, width: 50, class:"rounded-circle"  %>
+                <%if resource.avatar.attached? %>
+                    <%= image_tag @user.avatar, height:50, width: 50, class:"rounded-circle"  %>
                   <% else %>
                     <%= image_tag "https://res.cloudinary.com/ddlmgs04n/image/upload/v1665590513/Zinma2.0/profile_vehpkz.png", height:50, width: 50, class:"rounded-circle" %>
                   <% end %>
