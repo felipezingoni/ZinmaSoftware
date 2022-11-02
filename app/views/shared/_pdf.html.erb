@@ -1,13 +1,24 @@
 <%# <h1>www.software.zinmaseeds.com</h1> %>
 
+
 <div class="scroll">
   <div id="adobe-dc-view" style="width: 500px; height: 600px"></div>
   <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
   <script type="text/javascript">
+    // const ADOBE_KEY = "897f139a7df7466c87260af3fb8e0a0b" => Produccion para url www.software.zinmaseeds.com
+    const ADOBE_KEY = "0a18c2234313494d910fec10eb593cf6" //for testing in locahost
+    const PDF =
+      "<% @documents.each do |document|%>
+        <%= document.first.upload.%>
+      <% end %>"
+
+
+
+
     document.addEventListener("adobe_dc_view_sdk.ready", function(){
-      var adobeDCView = new AdobeDC.View({clientId: "897f139a7df7466c87260af3fb8e0a0b", divId: "adobe-dc-view"});
+      var adobeDCView = new AdobeDC.View({clientId: ADOBE_KEY , divId: "adobe-dc-view"});
       adobeDCView.previewFile({
-        content:{location: {url: "https://res.cloudinary.com/ddlmgs04n/image/upload/v1661544880/Zinma2.0/Zinma_FichaTecnica_sorgo-f750plus_1_mnvkex.pdf"}},
+        content:{location: {url: PDF}},
         metaData:{fileName: "ficha-tecnica-sorgo"}
       }, {embedMode: "IN_LINE"});
     });

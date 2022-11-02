@@ -2,24 +2,6 @@
   <div class="card" >
     <h4 class="name-pdf"><%= document.name_document %></h4>
     <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
-    <%# <% if document.images.representable? %>
-        <%# <%= image_tag document.images.representation(resize_to_limit: [100, 100]) %>
-    <%# <% end %>
-    <%# <% if document.uploads.representable? %>
-      <%# <%= link_to document.uploads(resize: '500x500'), rails_blob_path(file, disposition: "attachment") %>
-      <% if document.uploads.attached? %>
-        <%= link_to image_tag(uploads.representation(resize: '500x500')), upload %>
-      <% else %>
-        <%= image_tag("https://res.cloudinary.com/ddlmgs04n/image/upload/v1660932898/Zinma2.0/cultivo-card_c5mvwv.svg") %>
-      <% end %>
-    <%# <% end %>
-
-
-    <%# <%= @document.images.attach(io: File.open('/path/to/file')), width:"200px"  %>
-      <%# <% if document.images.image? %>
-        <%# <%= image_tag document.images.image, width:"200px"%>
-      <%# <% else %>
-        <%# <%= link_to document.name_document, rails_blob_path(file, disposition: "attachment")  %>
-      <%# <% end %>
   </div>
+    <%= link_to "view",document.upload %>
 <% end %>

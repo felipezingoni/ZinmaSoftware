@@ -33,7 +33,7 @@ gem "devise"
 gem 'jquery-rails'
 gem 'simple_form'
 gem "font-awesome-sass", "~> 6.2.0"
-gem 'poppler'
+gem 'poppler', '~> 3.0', '>= 3.0.7'
 gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 gem 'psych', '< 4'
 gem "azure-storage-blob", "~> 2.0", require: false
