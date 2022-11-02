@@ -1,7 +1,21 @@
-<% @documents.order(created_at: :desc).each do |document| %>
-  <div class="card" >
-    <h4 class="name-pdf"><%= document.name_document %></h4>
-    <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
-  </div>
-    <%= link_to "view",document.upload %>
+<%# <% @documents.order(created_at: :desc).each do |document| %>
+  <%# <div class="card d-flex justify-content-between flex-row align-items-center">
+    <div>
+      <h4 class="name-pdf"><%= document.name_document %></h4>
+      <%# <p class="authot-pdf"><%= document.created_by %>
+    <%# </div>
+    <%= link_to "view",document.upload, class:"p-3"%>
+  <%# </div>
 <% end %>
+
+      <a href="#" class="list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item" >
+        <% @documents.order(created_at: :desc).each do |document| %>
+          <div class="card d-flex justify-content-between flex-row align-items-center">
+            <div>
+              <h4 class="name-pdf"><%= document.name_document %></h4>
+              <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
+            </div>
+            <%= link_to "view", document.upload, target:"_blank", class:"p-3"%>
+          </div>
+        <% end %>
+      </a>

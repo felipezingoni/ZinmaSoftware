@@ -5,15 +5,20 @@
   <div class="col-9 pl-0">
     <div class="dashboard" style="height:90vh; width: auto; border-top-right-radius: 32px;">
       <h1 class="titulo p-3 mx-4">Politicas de Gestion</h1>
-      <p><%= @documents.count %> documents</p>
+      <div class="mx-5">
+        <p><%= @documents.count %> documents</p>
+      </div>
       <div class="scroll" >
-          <div class="row">
-            <div class="col-6">
-                <%= render "shared/infopanel" %>
-            </div>
-            <div class="col-6">
-              <%= render 'shared/pdf' %>
-            </div>
+          <div class="row" data-controller="hello" data-hello-index="0">
+
+                  <div class="col-5">
+                      <%= render "shared/infopanel" %>
+                  </div>
+                  <div class="col-7">
+                    <%= render 'shared/pdf' %>
+                  </div>
+
+
           </div>
        </div>
       <%= render "shared/flashes" %>

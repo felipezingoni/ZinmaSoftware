@@ -2,25 +2,27 @@
 
 
 <div class="scroll">
-  <div id="adobe-dc-view" style="width: 500px; height: 600px"></div>
-  <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
-  <script type="text/javascript">
-    // const ADOBE_KEY = "897f139a7df7466c87260af3fb8e0a0b" => Produccion para url www.software.zinmaseeds.com
-    const ADOBE_KEY = "0a18c2234313494d910fec10eb593cf6" //for testing in locahost
-    const PDF =
-      "<% @documents.each do |document|%>
-        <%= document.first.upload.%>
-      <% end %>"
+  <% @documents.order(created_at: :desc).each do |document| %>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" role="tabpanel"  data-target="hello.content">
+    <div id="adobe-dc-view" style="width: 600px; height: 500px"></div>
+    <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+    <script type="text/javascript">
+      // const ADOBE_KEY = "897f139a7df7466c87260af3fb8e0a0b" => Produccion para url www.software.zinmaseeds.com
+      const ADOBE_KEY = "0a18c2234313494d910fec10eb593cf6" //for testing in locahost
+      // const PDF = "<% document.upload %> "
+      const PDF = "https://res.cloudinary.com/ddlmgs04n/image/upload/v1667417082/Zinma2.0/Bodea_Brochure_slsyyn.pdf"
 
+      document.addEventListener("adobe_dc_view_sdk.ready", function(){
+        var adobeDCView = new AdobeDC.View({clientId: ADOBE_KEY , divId: "adobe-dc-view"});
+        adobeDCView.previewFile({
+          content:{location: {url: PDF}},
+          metaData:{fileName: "ficha-tecnica-sorgo"}
+        }, {embedMode: "IN_LINE"});
+      });
+    </script>
 
-
-
-    document.addEventListener("adobe_dc_view_sdk.ready", function(){
-      var adobeDCView = new AdobeDC.View({clientId: ADOBE_KEY , divId: "adobe-dc-view"});
-      adobeDCView.previewFile({
-        content:{location: {url: PDF}},
-        metaData:{fileName: "ficha-tecnica-sorgo"}
-      }, {embedMode: "IN_LINE"});
-    });
-  </script>
+    </div>
+  </div>
+  <% end %>
 </div>
