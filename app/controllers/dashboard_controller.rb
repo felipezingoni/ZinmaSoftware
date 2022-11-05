@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  set_tab :dashboard, :instructivos, :politicasdegestion, :procedimientos
+
   def index
     @documents = Document.all
   end
@@ -8,5 +10,13 @@ class DashboardController < ApplicationController
 
   def politicasdegestion
     @documents = Document.all
+  end
+
+  def instructivos
+
+  end
+
+  def procedimientos
+
   end
 end

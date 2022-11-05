@@ -1,39 +1,9 @@
+<%= tabs_tag do |tab| %>
+  <%= tab.index      'Home', "#" %>
+  <%= tab.dashboard 'Dashboard', "#" %>
+  <%= tab.instructivos   'instructivos', "#" %>
+  <%= tab.procedimientos   'procedimientos', "#" %>
+<% end %>
 
-<div class="scroll">
-  <div class="container" data-controller="hello" data-hello-index="0">
-    <% @documents.map do |document| %>
-    <div class="row">
-        <div class="col-4">
 
-            <a href="#" class="list-group-item list-group-item-action" data-action="click->hello#show" data-target="hello.item" >
-            <div class="card d-flex justify-content-between flex-row align-items-center">
-                  <div>
-                    <h4 class="name-pdf"><%= document.name_document %></h4>
-                    <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
-                  </div>
-                  <%= link_to "view", document.upload, class:"p-3"%>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="col-6">
-
-          <div class="tab-content">
-            <div class="tab-pane fade show active" role="tabpanel"  data-target="hello.content">
-              <% if document.upload.attached? %>
-                  <% if document.upload.previewable? %>
-                    <%= image_tag document.upload.preview(resize_to_fit: [550, 550])%>
-                  <% elsif document.upload.variable? %>
-                    <%= image_tag document.upload.variant(resize_to_fit: [550, 550])%>
-                  <% end %>
-              <% end %>
-            </div>
-
-        </div>
-        </div>
-
-    </div>
-    <% end %>
-  </div>
-</div>
+<p>The name of current tab is <%= current_tab %>.</p>

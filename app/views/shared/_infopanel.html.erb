@@ -15,7 +15,10 @@
               <h4 class="name-pdf"><%= document.name_document %></h4>
               <p class="authot-pdf"><%= document.created_by %>  - <%= document.created_at %></p>
             </div>
-            <%= link_to "view", document.upload, target:"_blank", class:"p-3"%>
+            <%= link_to document.upload, target:"_blank", class:"p-3" do%>
+              <i class="fa-solid fa-eye text-secondary"></i>
+            <% end %>
+
           </div>
         <% end %>
       </a>

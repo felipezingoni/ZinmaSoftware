@@ -47,13 +47,14 @@
                 <% end %>
             </div>
             <div>
-              <%= link_to 'Change password', "shared/password" %>
             </div>
           <% end %>
         </div>
     </div>
-
-      <%= link_to "Back", :back %>
+    <div class="d-flex justify-content-center align-items-center m-3">
+      <%= link_to "Back", :back, class:"p-3 boton-edit" %>
+      <%= link_to 'Change password', "shared/password", class:"p-3 boton-edit" %>
+    </div>
 
 
     </div>

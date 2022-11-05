@@ -38,6 +38,7 @@ gem 'streamio-ffmpeg', '~> 3.0', '>= 3.0.2'
 gem 'psych', '< 4'
 gem "azure-storage-blob", "~> 2.0", require: false
 gem 'image_processing', '~> 1.2'
+gem "tabs_on_rails"
 
 # gem 'gravatar_image_tag'
 # gem 'gravtastic'

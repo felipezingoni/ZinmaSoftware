@@ -2,36 +2,36 @@
   <nav class="col-md-2 d-none d-md-block sidebar" style="height:90vh; width: auto; border-top-left-radius: 32px;">
     <div class="sidebar-sticky">
     <br>
-    <ul class="m-5 " style="list-style: none">
+    <ul class="m-5 nav-pills" style="list-style: none">
       <h1 class="menu mb-4">Menu</h1>
       <div class="">
           <div>
-            <li class="d-flex align-content-center mb-3">
-              <%= link_to "#", class:"text-decoration-none" do %>
-                <div class="d-flex align-items-center category">
+            <li class="d-flex align-content-center mb-3 nav-item" >
+              <%= link_to "#", class:"text-decoration-none " do %>
+                <div class="d-flex align-items-center category active23" >
                   <i class="fa-solid fa-house m-3"></i><p class="m-0">Home</p>
                 </div>
               <% end %>
             </li>
 
-            <li class="d-flex align-content-center mb-3">
+            <li class="d-flex align-content-center mb-3 nav-item">
               <%= link_to root_path, class:"text-decoration-none" do %>
-                <div class="d-flex align-items-center category">
+                <div class="d-flex align-items-center category ">
                   <i class="fa-solid fa-paperclip m-3"></i><p class="m-0">Politica de Gestion</p>
                 </div>
               <% end %>
             </li>
 
-            <li class="d-flex align-content-center mb-3">
-              <%= link_to "#", class:"text-decoration-none" do %>
+            <li class="d-flex align-content-center mb-3 nav-item">
+              <%= link_to "#", class:"text-decoration-none " do %>
                 <div class="d-flex align-items-center category">
                   <i class="fa-solid fa-file-invoice m-3"></i><p class="m-0">Instructivos</p>
                 </div>
               <% end %>
             </li>
 
-            <li class="d-flex align-content-center mb-3">
-              <%= link_to "#", class:"text-decoration-none" do %>
+            <li class="d-flex align-content-center mb-3 nav-item">
+              <%= link_to "#", class:"text-decoration-none " do %>
                 <div class="d-flex align-items-center category">
                   <i class="fa-solid fa-folder-open m-3"></i><p class="m-0">Procedimientos</p>
                 </div>
@@ -39,8 +39,8 @@
             </li>
           </div>
           <div class="d-flex align-items-end" style="height:310px;">
-            <li class="d-flex align-content-center mb-3">
-                <%= link_to edit_user_registration_path, class:"text-decoration-none" do %>
+            <li class="d-flex align-content-center mb-3 nav-item">
+                <%= link_to edit_user_registration_path, class:"text-decoration-none " do %>
                   <div class="d-flex align-items-center category">
                     <i class="fa-solid fa-gear m-3"></i><p class="m-0">Settings</p>
                   </div>
